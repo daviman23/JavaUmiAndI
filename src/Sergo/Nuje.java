@@ -1,4 +1,4 @@
-package I;
+package Sergo;
 
 public class Nuje {
     public static void main(String[] args) {

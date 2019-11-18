@@ -1,4 +1,4 @@
-package Umi12;
+package Umi;
 
 public class UmiNeLetit {
     public static void main(String[] args) {

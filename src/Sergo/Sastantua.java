@@ -1,4 +1,4 @@
-package I;
+package Sergo;
 
 import java.util.Scanner;
 
