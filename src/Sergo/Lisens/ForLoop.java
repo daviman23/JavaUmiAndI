@@ -1,4 +1,4 @@
-package Sergo;
+package Sergo.Lisens;
 
 public class ForLoop {
     public static void main(String[] args) {

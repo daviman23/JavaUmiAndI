@@ -1,4 +1,4 @@
-package Sergo;
+package Sergo.fun.Sastantua;
 
 import java.util.Scanner;
 

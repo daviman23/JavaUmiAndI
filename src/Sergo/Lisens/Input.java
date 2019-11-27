@@ -1,4 +1,4 @@
-package Sergo;
+package Sergo.Lisens;
 
 import java.util.Scanner;
 

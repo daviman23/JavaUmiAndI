@@ -1,4 +1,4 @@
-package Sergo;
+package Sergo.Lisens;
 
 import org.w3c.dom.ls.LSOutput;
 
