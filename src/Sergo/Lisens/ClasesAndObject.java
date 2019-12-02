@@ -3,19 +3,40 @@ package Sergo.Lisens;
 public class ClasesAndObject {
     public static void main(String[] args) {
     Person person1 = new Person();
-    person1.setNameAndAge("иывн",10);
-    person1.speak();
-    Person person2 = new Person();
-    person2.age = 20;
-    person2.name = "Серго";
-    person2.sayHello();
-    int year1 = person1.colculete();
-        System.out.println(year1);
+   person1.setName("");
+   person1.setAge(0);
+   person1.speak();
+        System.out.println("Верни имя " + person1.getName());
+        System.out.println("Верни возраст " + person1.getAge());
     }
 }
 class Person{
-    String name;
-    int age;
+   private String name;
+    private int  age;
+
+    public void setName( String username){
+        if(username.isEmpty()){
+            System.out.println("Ты ввел пустое имя");
+        }
+        else{
+            name = username;}
+    }
+    public String getName(){
+        return name;
+    }
+
+    public void setAge(int userAge){
+        if(userAge > 0){
+            age = userAge;
+        }else{
+            System.out.println("ты ввел не правильный возраст");
+        }
+        age = userAge;
+    }
+
+    public int getAge(){
+        return age;
+    }
 
     void setNameAndAge(String username, int ageuser){
         name = username;

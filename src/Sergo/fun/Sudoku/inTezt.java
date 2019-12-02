@@ -22,6 +22,8 @@ public class inTezt {
         for (int i = 0; i < 9 ; i++) {
             System.out.println();
             for (int j = 0; j < 9 ; j++) {
+
+
                 if(s[i][j] > '0' && s[i][j] <= '9'){
                     System.out.print(s[i][j]);
                 }
