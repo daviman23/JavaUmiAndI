@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Input {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.println("write number");
-        int i = s.nextInt();
-        System.out.println("you write "+i);
+        System.out.println("write something");
+        String string = s.nextLine();
+        System.out.println("you write "+string);
     }
 }
