@@ -1,4 +1,4 @@
-package Umi;
+package Umi.lisens;
 
 public class HelloWorld {
     public static void main(String[] args) {

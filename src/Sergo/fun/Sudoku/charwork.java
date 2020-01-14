@@ -1,18 +1,29 @@
 package Sergo.fun.Sudoku;
 
+import java.util.Scanner;
+
 public class charwork {
     public static void main(String[] args) {
-        char [] a = new char[3];
-        a[0] = '1';
-        a[2] = '1';
-        a[1] = '1';
-
-        a[1]++;
-        System.out.println(a[1]);
-        char o = '1';
-        while(o != '9'){
-            o++;
-
+        Scanner sudoku = new Scanner(System.in);
+        int[] i = new int[9];
+        for (int j = 0; j < i.length; j++) {
+            i[j] = sudoku.nextInt();
         }
+        int y = 0;
+        int y1 = 0;
+        while (y1 != 9) {
+            while (y != 9) {
+                if(i[y] == i[y1]){
+                    y1--;
+                }
+                y++;
+            }
+            y1++;
+        }
+        for (int j = 0; j < i.length; j++) {
+            System.out.println(i[j]);
         }
     }
+}
+
+
