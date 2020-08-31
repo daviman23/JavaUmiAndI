@@ -1,31 +1,34 @@
 package Sergo.book;
 
+import java.util.Scanner;
+
 public class Binar {
     public static void main(String[] args) {
-        int [] aa;
-        aa = new int [10];
-        int a = 62;
-        int m = 0;
-        int i = 0;
-        while (a != 0) {
-            if (a % 2 != 1) {
-                a = a / 2;
-                //System.out.print("0");
-                m = 0;
-                aa[i] = m;
-                i++;
-
-            } else if (a % 2 != 0) {
-                a = a / 2;
-                //System.out.print("1");
-                m = 1;
-                aa[i] = m;
-                i++;
+        int[] ix = new int[32];
+        int u = 0;
+        int exit = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Введите чяисло:");
+        int i = s.nextInt();
+        while (i != 0) {
+            if (i % 2 == 1) {
+                exit = i / 2;
+                ix[u] = 1;
             }
+            if (i % 2 == 0) {
+                exit = i / 2;
+                ix[u] = 0;
+            }
+            i = exit;
+            u++;
         }
-        while(i != 0) {
-            System.out.print(aa[i]);
-            i--;
+        System.out.println("В двоичном коде будет:");
+        int j = ix.length;
+        while (j >= 0) {
+            if (j <= u -1) {
+                System.out.print(ix[j]);
+            }
+            j--;
         }
     }
 }
