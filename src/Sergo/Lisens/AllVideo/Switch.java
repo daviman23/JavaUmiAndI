@@ -1,4 +1,4 @@
-package Sergo.Lisens;
+package Sergo.Lisens.AllVideo;
 
 import java.util.Scanner;
 

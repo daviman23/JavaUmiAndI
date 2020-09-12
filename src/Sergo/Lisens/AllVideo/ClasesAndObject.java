@@ -1,4 +1,4 @@
-package Sergo.Lisens;
+package Sergo.Lisens.AllVideo;
 
 public class ClasesAndObject {
     public static void main(String[] args) {
