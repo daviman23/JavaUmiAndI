@@ -4,9 +4,12 @@ import java.util.Scanner;
 
 public class Sastantua{
         public static void main(String[] args) {
+            long start = System.currentTimeMillis();
             Scanner a = new Scanner(System.in);
             int t = a.nextInt();
             ter(t);
+            long end = System.currentTimeMillis();
+            System.out.println(end - start);
         }
         public static int ter(int i) {
             int r = i;
