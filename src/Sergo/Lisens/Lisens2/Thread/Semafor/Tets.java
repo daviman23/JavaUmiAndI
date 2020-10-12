@@ -1,25 +1,58 @@
 package Sergo.Lisens.Lisens2.Thread.Semafor;
 
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.*;
 
 public class Tets {
-    public static void main(String[] args) {
-        Semaphore semaphore = new Semaphore(3);
+    public static void main(String[] args) throws InterruptedException {
+        ExecutorService executorService = Executors.newFixedThreadPool(200);
 
-        try {
-            semaphore.acquire();
-            semaphore.acquire();
-            semaphore.acquire();
-            System.out.println(" All parmits have been aquired");
-
-            semaphore.acquire();
-            System.out.println("Cant reach hear....");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        Conection conection = Conection.getConection();
+        for (int i = 0; i < 200 ; i++) {
+            executorService.submit(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        conection.work();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
+        executorService.shutdown();
+        executorService.awaitTermination(1, TimeUnit.DAYS);
+    }
+}
+// singlton
+class Conection{
+    private static Conection conection = new Conection();
+    private int conectioncount;
+    private Semaphore semaphore = new Semaphore(10);
 
-      //  semaphore.release();
+    private Conection() {
 
-        System.out.println(semaphore.availablePermits());
+    }
+
+    public static Conection getConection() {
+        return conection;
+    }
+    public  void work() throws InterruptedException {
+        semaphore.acquire();
+        try {
+            doWork();
+        } finally {
+            semaphore.release();
+        }
+    }
+
+    private void doWork() throws InterruptedException {
+        synchronized (this) {
+        conectioncount++;
+            System.out.println(conectioncount);
+    }
+    Thread.sleep(5000);
+        synchronized (this){
+            conectioncount--;
+        }
     }
 }

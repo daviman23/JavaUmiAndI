@@ -10,7 +10,6 @@ public class abc {
         while(i <= j) {
             System.out.print(i);
             i++;
-
         }
         System.out.println();
 
