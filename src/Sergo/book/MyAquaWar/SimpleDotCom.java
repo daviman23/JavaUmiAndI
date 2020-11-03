@@ -2,47 +2,50 @@ package Sergo.book.MyAquaWar;
 
 import Sergo.book.AquaWar1.GameHelper;
 
+import java.util.ArrayList;
+import java.util.concurrent.ArrayBlockingQueue;
+
 public class SimpleDotCom {
+    int[] locationCell;
+    int numOfHits = 0;
+
     public static void main(String[] args) {
-       int  numOfGuess = 0;
+        int numOfGuess = 0;
         GameHelper gm = new GameHelper();
 
         SimpleDotCom theDotCom = new SimpleDotCom();
-        int random =(int)(Math.random() * 5);
+        int random = (int) (Math.random() * 5);
 
-        int[] location = {random,random+1,random + 2};
-        theDotCom.setLocationCells(location);
+        int[] location = {random, random + 1, random + 2};
+        theDotCom.setLocationCell(location);
         boolean isAlive = true;
 
-        while (isAlive == true){
+        while (isAlive == true) {
             String guess = gm.getUserInput("Введите число");
             String result = theDotCom.ChekYourSelf(guess);
             numOfGuess++;
-            if(result.equals("Потопил")){
+            if (result.equals("Потопил")) {
                 isAlive = false;
                 System.out.println("Вам понадобилось " + numOfGuess + " попытки");
             }
         }
-    }
-    int[] locationCells;
-    int numOfHeats = 0;
+    };
 
-    public void setLocationCells(int[] locationCells) {
-        this.locationCells = locationCells;
+    public void setLocationCell(int[] location) {
+        this.locationCell = location;
     }
 
-    public String ChekYourSelf(String StringGuess){
+    public String ChekYourSelf(String stringGuess){
+        int guess = Integer.parseInt(stringGuess);
         String result = "Мимо";
-        int i = Integer.parseInt(StringGuess);
-
-        for(int  call : locationCells){
-            if(i == call){
+        for (int cell : locationCell){
+            if(guess == cell) {
+                numOfHits++;
                 result = "Попал";
-                numOfHeats++;
                 break;
             }
         }
-        if(numOfHeats == locationCells.length){
+        if(numOfHits == locationCell.length) {
             result = "Потопил";
         }
         System.out.println(result);

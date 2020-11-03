@@ -1,4 +1,4 @@
-package Sergo.book.MyAquaWar;
+/*package Sergo.book.MyAquaWar;
 
 public class SimpleDotTestDriveCom {
     public static void main(String[] args) {
@@ -10,3 +10,4 @@ public class SimpleDotTestDriveCom {
         System.out.println(resulrt);
     }
 }
+*/
